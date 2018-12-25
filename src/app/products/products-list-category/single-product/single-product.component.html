@@ -1,0 +1,29 @@
+<!--<a style="cursor: pointer;" class="list-group-item clearfix">
+
+    <div class="row">
+        <div class=" col-lg-1 col-offset-6 centered ">
+            <h4 class="list-group-item-heading">{{ singleProducts.name }}</h4>
+
+
+            <button class="btn btn-primary" (click)="addToShoppingList()">Add in shoop cart</button>
+        </div>
+
+    </div>
+
+</a>
+-->
+<div class="container">
+    <div class="row">
+        <div class="col-xs-4">
+            <img class="col-lg-offset-4" [src]="singleProducts.image">
+        </div>
+        <div class="col-xs-6">
+            <p>
+                name: {{ singleProducts.name }}
+            </p>
+            <p> price: {{singleProducts.price}}</p>
+            <p>description: {{singleProducts.description}}</p>
+            <button class="btn btn-primary" (click)="addToShoppingList()">Add in shoop cart</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+img {
+    
+
+    justify-content: center;
+    max-height: 350px;
+    margin-left: -3.666667%;
+}
+p {
+    text-align: center;
+}
+
+.btn-primary{
+    cursor: pointer;
+    max-height: 208px;
+    margin-left: 35%;
+    margin-bottom: 0%;
+    font-size: 15px;
+    padding: 15px 89px;
+    position: absolute;
+   
+}

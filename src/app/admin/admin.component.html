@@ -1,0 +1,66 @@
+<div *ngFor="let alert of alerts">
+  <alert [type]="alert.type" [dismissOnTimeout]="alert.timeout" id="success">{{ alert.msg }}</alert>
+</div>
+
+<div class="row">
+  <div class="col-xs-4">
+    <button type="button" class="btn btn-primary" (click)="openModalCategory()">Create category</button>
+  </div>
+  <button type="button" class="btn btn-primary" (click)="openModalProduct()">Create product</button>
+</div>
+
+
+
+<br>
+
+<div class="container-fluid" *ngFor="let category of categoryList; let indexCategory = index">
+  <div class="row">
+    <div class="col-xs-12">
+
+      <a style="cursor: pointer;" class="list-group-item clearfix">
+        <div class="row">
+          <div class="col-xs-4">
+            <p>name: {{category.name}}</p>
+          </div>
+          <div class="col-xs-4">
+            <p>Description {{category.description}}</p>
+          </div>
+          <div class="col-xs-4">
+            <p>Image</p>
+          </div>
+          <span class="pull-right">
+            <span class="glyphicon glyphicon-remove" (click)="deteleCategory(indexCategory, category)"></span>
+            <span class="glyphicon glyphicon-edit" (click)="openModalCategory(category, true)"></span>
+
+          </span>
+        </div>
+
+
+        <div class="container-fluid" *ngFor="let product of category.products; let indexProduct = index">
+          <div class="row">
+            <div class="col-xs-12">
+
+              <a style="cursor: pointer;" class="list-group-item clearfix">
+                <div class="row">
+                  <div class="col-xs-4">
+                    <p>name: {{product.name}}</p>
+                  </div>
+                  <div class="col-xs-4">
+                    <p>Description {{product.description}}</p>
+                  </div>
+                  <span class="pull-right">
+                    <span class="glyphicon glyphicon-remove" (click)="deteleProduct(indexCategory, indexProduct, category)"></span>
+                    <span class="glyphicon glyphicon-edit" (click)="openModalProduct(category,true,indexProduct)"></span>
+
+                  </span>
+                </div>
+
+              </a>
+
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>

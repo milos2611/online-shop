@@ -1,0 +1,33 @@
+<a *ngFor="let products of productCarts; let i = index" style="cursor: pointer;" class="list-group-item clearfix">
+
+  <div class="row">
+    <div class="col-xs-2">
+      <p class="list-group-item-heading"> Name : {{ products.name }}</p>
+    </div>
+    <div class="col-xs-2">
+      <p>Number of product:</p>
+
+    </div>
+    
+    <div class="col-xs-2">
+      <input type="number" id="numberOfProduct" class="form-control" placeholder="Number of product" min="1" #number (ngModelChange)="setPrice($event,i)"
+        [(ngModel)]="products.numberOfProduct" >
+    </div>
+
+
+    <div class="col-xs-2">
+      <p>Price per product:{{products.price}}</p>
+    </div>
+
+    <span class="pull-right">
+      <span class="glyphicon glyphicon-remove" (click)="deleteFromCart(i)"></span>
+    </span>
+  </div>
+
+</a>
+
+
+<hr>
+
+<p>Total price:{{priceForAllProducts}}</p>
+

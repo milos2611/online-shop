@@ -1,0 +1,63 @@
+<div class="modal-header">
+  <h4 class="modal-title pull-left"> {{ title }} </h4>
+  <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+<div class="modal-body">
+
+  <form [formGroup]="productForm" (ngSubmit)="storeProduct()">
+
+    <div class="form-group">
+
+      <select class="custom-select" formControlName="category" *ngIf="!editMode">
+        <option *ngFor="let category of categoryList" value="{{category.name}}">
+          {{category.name }}
+        </option>
+      </select>
+
+
+    </div>
+
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input class="form-control" id="name" aria-describedby="name" placeholder="Enter name" formControlName="name">
+      <span *ngIf="!productForm.get('name').valid && productForm.get('name').touched" style="background-color:red">
+        Name input field should not be empty
+      </span>
+    </div>
+
+    <div class="form-group">
+      <label for="name">Image</label>
+      <input class="form-control" id="name" aria-describedby="image" placeholder="Enter image" formControlName="image">
+      <span *ngIf="!productForm.get('image').valid && productForm.get('image').touched" style="background-color:red">
+        Name input field should not be empty
+      </span>
+    </div>
+
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea formControlName="description" class="form-control" id="text" rows="3"></textarea>
+      <span *ngIf="!productForm.get('description').valid && productForm.get('description').touched" style="background-color:red">
+        Name input field should not be empty
+      </span>
+    </div>
+
+
+    <div class="form-group">
+      <label for="name">Price</label>
+      <input class="form-control" id="name" aria-describedby="image" placeholder="Enter price" min="1" type="number"
+        formControlName="price">
+      <span *ngIf="!productForm.get('price').valid && productForm.get('price').touched" style="background-color:red">
+        Name input field should not be empty
+      </span>
+    </div>
+
+
+    <hr>
+    <button type="submit" class="btn btn-primary" [disabled]="!productForm.valid" (click)="modalRef.hide()" *ngIf="!editMode">Submit</button>
+    <button type="submit" class="btn btn-primary" [disabled]="!productForm.valid" (click)="modalRef.hide()" (click)="editCategory()"
+      *ngIf="editMode">Edit</button>
+  </form>
+</div>

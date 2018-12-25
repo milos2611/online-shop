@@ -1,0 +1,18 @@
+<div class="sticky-top">
+
+  <ul class="list-group">
+      <a class="list-group-item list-group-item-action" [routerLink]="['/productsList']" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">All product</a>
+
+    <a *ngFor="let products of categoryProduc; let i = index"  [routerLink]="[products.name]"  routerLinkActive="active"   class="list-group-item list-group-item-action">
+      {{ products.name }}
+    </a>
+  </ul>
+  <!--
+  <div class="col-xs-4 " *ngFor="let products of categoryProduc; let i = index" [routerLink]="[products.name]">
+    <p>{{ products.name }}</p>
+    <img class="col-lg-offset-4" [src]="products.image">
+    <p>{{ products.description }}</p>
+
+  </div>
+  -->
+</div>

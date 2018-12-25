@@ -1,0 +1,16 @@
+<div class="row " >
+
+  <div class="col-xs-3" *ngFor="let products of singleProducts; let i = index " >
+
+    <div [routerLink]="[i]">
+        <p>{{ products.name }}</p>
+        <img class="col-lg-offset-4" [src]="products.image">
+        <p>{{ products.description }}</p>
+        <p>{{ products.price }}</p>
+    </div>
+     
+    <button class="btn btn-primary" (click)="addToShoppingList(i)">Add in shoop cart</button>
+  </div>
+</div>
+
+
