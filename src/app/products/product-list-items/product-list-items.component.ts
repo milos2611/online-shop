@@ -1,12 +1,11 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ProductsService } from '../../products.service';
 import { Router, ActivatedRoute, Params, ParamMap } from '@angular/router';
-import { ProductModel } from 'src/app/shared/product.model';
-import { ShopCartService } from 'src/app/shop-cart/shop-cart-service';
+import { ProductModel } from 'src/app/shared/models/product.model';
 import { Subscription, Observable } from 'rxjs';
-import { switchMap } from 'rxjs/operators';
-import { DataStorageServiceService } from 'src/app/shared/data-storage-service.service';
-import { CategoryModel } from 'src/app/shared/category.model';
+import { CategoryModel } from 'src/app/shared/models/category.model';
+import { ProductsService } from '../products.service';
+import { ShopCartService } from 'src/app/shop-cart/shop-cart-service';
+import { DataStorageServiceService } from 'src/app/shared/services/data-storage-service.service';
 
 
 @Component({
@@ -84,4 +83,3 @@ export class ProductListItemsComponent implements OnInit, OnDestroy {
 }
 
 
-/** Problem je zato sto ne pokupi podatke sa servera */

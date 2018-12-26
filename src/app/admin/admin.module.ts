@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AdminComponent } from './admin.component';
-import { FormsModule, ReactiveFormsModule, FormControl } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CategoryComponent } from './category/category.component';
 import { ProductModal } from './products/products.component';
 import { AlertModule } from 'ngx-bootstrap/alert';
 import { AdminRoutingModule } from './admin-routing.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ModalModule } from 'ngx-bootstrap';
 
 
 
@@ -18,8 +19,11 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     ReactiveFormsModule,
     FormsModule,
     AdminRoutingModule,
-    NgbModule,
-    AlertModule.forRoot()
+    AlertModule.forRoot(),
+    ModalModule.forRoot(),
+
+
+    NgbModule
 
   ],
   declarations: [
@@ -27,11 +31,11 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     CategoryComponent,
     ProductModal
 
-  ]
-  , entryComponents: [
-    CategoryComponent,
-    ProductModal
-  ]
-
+  ],
+  
+      entryComponents: [
+        CategoryComponent,
+        ProductModal
+      ]
 })
 export class AdminModule { }

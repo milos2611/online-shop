@@ -1,8 +1,8 @@
 
 import { Injectable } from '@angular/core';
-import { ProductModel } from '../shared/product.model';
+import { ProductModel } from '../shared/models/product.model';
 import { Subject } from 'rxjs';
-import { DataStorageServiceService } from '../shared/data-storage-service.service';
+import { DataStorageServiceService } from '../shared/services/data-storage-service.service';
 
 @Injectable()
 export class ShopCartService {

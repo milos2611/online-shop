@@ -1,8 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ProductsService } from '../products.service';
-import { Subscription } from 'rxjs';
-import { CategoryModel } from 'src/app/shared/category.model';
-import { DataStorageServiceService } from 'src/app/shared/data-storage-service.service';
+import { DataStorageServiceService } from 'src/app/shared/services/data-storage-service.service';
+import { CategoryModel } from 'src/app/shared/models/category.model';
 
 @Component({
   selector: 'app-products-list',
@@ -13,8 +12,6 @@ export class ProductsListComponent implements OnInit {
 
 
   categoryProduc: CategoryModel[];
-  subscription: Subscription;
-  @Input('selectedCategory') selectedCategory;
 
 
 

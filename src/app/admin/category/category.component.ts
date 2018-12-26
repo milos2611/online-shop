@@ -1,9 +1,8 @@
-import { Component, OnInit, TemplateRef, Injectable } from '@angular/core';
-import { CategoryModel } from 'src/app/shared/category.model';
+import { Component, OnInit } from '@angular/core';
+import { CategoryModel } from 'src/app/shared/models/category.model';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { DataStorageServiceService } from 'src/app/shared/data-storage-service.service';
-import { BsModalService, AlertComponent, BsModalRef } from 'ngx-bootstrap';
-import { AdminComponent } from '../admin.component';
+import { DataStorageServiceService } from 'src/app/shared/services/data-storage-service.service';
+import { BsModalRef } from 'ngx-bootstrap';
 import { AdminSerivice } from '../admin.service';
 
 @Component({
@@ -27,15 +26,9 @@ export class CategoryComponent implements OnInit {
     this.initForm();
 
   }
-
-
-
-
-
   private initForm() {
     let name = '';
     let description = '';
-    let category = '';
     let image = '';
 
     if (this.editMode) {
@@ -52,8 +45,6 @@ export class CategoryComponent implements OnInit {
       'description': new FormControl(description, Validators.required),
       'image': new FormControl(image, Validators.required)
     })
-
-
 
   }
 

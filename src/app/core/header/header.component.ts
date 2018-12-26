@@ -8,10 +8,7 @@ import { ProductsService } from 'src/app/products/products.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private productsService: ProductsService) {
-   // this.productsService.getCategoryFromServer();
-
-  }
+  constructor() {}
 
   ngOnInit() {
    

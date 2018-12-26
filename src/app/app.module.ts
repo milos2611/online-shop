@@ -4,16 +4,14 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
-import { AdminModule } from './admin/admin.module';
 import { ShopCartModule } from './shop-cart/shop-cart.module';
-import { ProductsModule } from './products/products.module';
 import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { TooltipModule, ModalModule } from 'ngx-bootstrap';
+import { FormsModule } from '@angular/forms';
 import { InMemoryDataService } from './in-memory-data-service';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { SharedModule } from './shared/shared.module';
 import { NgbModule, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+
 
 
 
@@ -32,9 +30,6 @@ import { NgbModule, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
     HttpClientModule,
     FormsModule,
     SharedModule,
-   
-
-    ModalModule.forRoot(),
     NgbModule.forRoot(),
 
     HttpClientInMemoryWebApiModule.forRoot(
@@ -42,11 +37,15 @@ import { NgbModule, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
     )
 
   ],
+
+
   providers: [
     NgbActiveModal,
     InMemoryDataService],
-    bootstrap: [AppComponent],
 
-  
+
+  bootstrap: [AppComponent],
+
+
 })
 export class AppModule { }

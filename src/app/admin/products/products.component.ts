@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { CategoryModel } from 'src/app/shared/category.model';
+import { CategoryModel } from 'src/app/shared/models/category.model';
 import { BsModalRef } from 'ngx-bootstrap';
-import { DataStorageServiceService } from 'src/app/shared/data-storage-service.service';
+import { DataStorageServiceService } from 'src/app/shared/services/data-storage-service.service';
 import { AdminSerivice } from '../admin.service';
-import { ProductModel } from 'src/app/shared/product.model';
+import { ProductModel } from 'src/app/shared/models/product.model';
 
 @Component({
   selector: 'app-products',
@@ -31,7 +31,7 @@ export class ProductModal implements OnInit {
 
 
   constructor(
-    public modalRef: BsModalRef, private dataStorageServiceService: DataStorageServiceService, private adminService: AdminSerivice
+    public modalRef: BsModalRef, private dataStorageServiceService: DataStorageServiceService
   ) { }
 
   ngOnInit() {
@@ -77,7 +77,6 @@ export class ProductModal implements OnInit {
     let name = '';
     let description = '';
     let image = '';
-    let price = '';
 
     if (this.editMode) {
 

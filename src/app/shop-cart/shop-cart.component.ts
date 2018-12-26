@@ -1,8 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ShopCartService } from './shop-cart-service';
-import { ProductModel } from '../shared/product.model';
+import { ProductModel } from '../shared/models/product.model';
 import { Subscription } from 'rxjs';
-import { DataStorageServiceService } from '../shared/data-storage-service.service';
 
 @Component({
   selector: 'app-shop-cart',

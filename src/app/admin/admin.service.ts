@@ -1,8 +1,8 @@
-import { Injectable, TemplateRef, ViewChild } from "@angular/core";
-import { Subject, Subscription } from "rxjs";
-import { CategoryModel } from "../shared/category.model";
+import { Injectable } from "@angular/core";
+import { Subject } from "rxjs";
+import { CategoryModel } from "../shared/models/category.model";
 import { ShopCartService } from "../shop-cart/shop-cart-service";
-import { DataStorageServiceService } from "../shared/data-storage-service.service";
+import { DataStorageServiceService } from "../shared/services/data-storage-service.service";
 
 @Injectable()
 export class AdminSerivice {
@@ -15,7 +15,7 @@ export class AdminSerivice {
 
 
 
-    constructor(private shopService: ShopCartService, private dataStorageServiceServiceta: DataStorageServiceService, ) {
+    constructor( private dataStorageServiceServiceta: DataStorageServiceService, ) {
     }
 
 

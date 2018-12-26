@@ -1,12 +1,12 @@
 import { Component, OnInit, TemplateRef, ViewChild, ElementRef, Inject, forwardRef } from '@angular/core';
-import { DataStorageServiceService } from '../shared/data-storage-service.service';
-import { CategoryModel } from '../shared/category.model';
-import { ModalModule, BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
-import { ProductModel } from '../shared/product.model';
+import { DataStorageServiceService } from '../shared/services/data-storage-service.service';
+import { CategoryModel } from '../shared/models/category.model';
+import {  BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { ProductModel } from '../shared/models/product.model';
 import { AdminSerivice } from './admin.service';
 import { Subscription } from 'rxjs';
 import { AlertComponent } from 'ngx-bootstrap/alert/alert.component';
-import { MessageService } from '../shared/message-data.service';
+import { MessageService } from '../shared/services/message-data.service';
 import { CategoryComponent } from './category/category.component';
 import { ProductModal } from './products/products.component';
 

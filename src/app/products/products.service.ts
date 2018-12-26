@@ -1,10 +1,10 @@
 import { Injectable, OnInit } from '@angular/core';
-import { CategoryModel } from '../shared/category.model';
+import { CategoryModel } from '../shared/models/category.model';
 import { Subject } from 'rxjs';
 import { ShopCartService } from '../shop-cart/shop-cart-service';
-import { DataStorageServiceService } from '../shared/data-storage-service.service';
+import { DataStorageServiceService } from '../shared/services/data-storage-service.service';
 import { ProductModal } from '../admin/products/products.component';
-import { ProductModel } from '../shared/product.model';
+import { ProductModel } from '../shared/models/product.model';
 
 @Injectable()
 export class ProductsService {
@@ -17,7 +17,6 @@ export class ProductsService {
     //this.getCategoryFromServer();
   }
 
-  /**lose napisano */
   getCategoryFromServer(): Promise<CategoryModel[]> {
     return new Promise((resolve, reject) => {
       this.dataStorageServiceServiceta.getCategory().subscribe(
@@ -52,7 +51,6 @@ export class ProductsService {
 
 
   getListOfProduct(index: string) {
-    console.log(this.categoryModule + 'sss milos')
 
     for (let i = 0; this.categoryModule.length; i++) {
       if (this.categoryModule[i].name == index) {
